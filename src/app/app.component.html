@@ -1,0 +1,24 @@
+
+<div id="app" class="sudoku container-fluid" [class.show-hints]="showHints" >
+  <div class="menu-container">
+    <div class="btn-group" dropdown placement="bottom right">
+      <button id="button-alignment" dropdownToggle type="button"
+              class="btn btn-default dropdown-toggle" aria-controls="dropdown-alignment">
+        Menu <span class="caret"></span>
+      </button>
+      <ul id="dropdown-alignment" *dropdownMenu class="dropdown-menu dropdown-menu-right"
+          role="menu" aria-labelledby="button-alignment">
+        <li *ngIf="!showHints" role="menuitem"><a class="dropdown-item" href="#" (click)="toggleHints()">Hints ON</a></li>
+        <li *ngIf="showHints" role="menuitem"><a class="dropdown-item" href="#" (click)="toggleHints()">Hints OFF</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#" (click)="createNew()">New</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#" (click)="saveData()">Save</a></li>
+        <li role="menuitem" ><a class="dropdown-item" [class.disabled]="isSaveDisabled()" href="#" (click)="deleteCurrent()">Delete</a></li>
+      </ul>
+    </div>
+  </div>
+
+    <div *ngFor="let row of sudoku.grid" class="row">
+      <square *ngFor="let s of row" [square]="s" [showHints]="showHints"></square>
+    </div>
+</div>
+

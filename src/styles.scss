@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+$gridWidth: 1px;
+$thickGridWidth: $gridWidth*4;
+$fontSize:8.5vw;
+$fontFallback:80px;
+$gridColor: black;
+$gridStyle: solid;
+
+.sudoku {
+	padding: 5vw;
+}
+.sudoku .menu-container {
+  width: 90vw;
+  text-align: right;
+}
+.square { width: 10vw; height: 10vw; margin:0; padding: 0; display: table; float:left; border: $gridWidth $gridStyle $gridColor; box-sizing: border-box;  text-align: center; }
+.square span {
+	display: table-cell;
+  	vertical-align: middle;
+  	line-height: $fontFallback;
+	line-height: $fontSize;
+	font-size: $fontFallback;
+  	font-size:$fontSize;
+  	font-weight: normal;
+}
+.square.row0 { border-top: $thickGridWidth $gridStyle $gridColor; }
+.square.row2 { border-bottom: $thickGridWidth $gridStyle $gridColor; }
+.square.row5 { border-bottom: $thickGridWidth $gridStyle $gridColor; }
+.square.row8 { border-bottom: $thickGridWidth $gridStyle $gridColor; }
+.square.col0 { border-left: $thickGridWidth $gridStyle $gridColor; }
+.square.col2 { border-right: $thickGridWidth $gridStyle $gridColor; }
+.square.col5 { border-right: $thickGridWidth $gridStyle $gridColor; }
+.square.col8 { border-right: $thickGridWidth $gridStyle $gridColor; }
+.square.col0 { clear: left; }
+
+/*.show-hints .square.min-empty-2 {
+  background-color: #33cc33;
+
+  classes needed:
+
+  hint-single-possible-value
+  hint-last-grid
+  hint-has-duplicate
+  current-value
+  hint-value-used;
+}*/
+.hint-value-used {
+  color:transparent;
+}
+.current-value, .current-value.hint-value-used {
+  color: #33cc33;
+}
+.hint-last-grid {
+  background-color: #33cc33;
+}
+.hint-has-duplicate, .hint-has-duplicate.current-value {
+  color: red;
+}
+.hint-single-possible-value {
+  background-color: #33cc33;
+}
+
+
+.sudoku-select-value .col-4 {
+	border: $gridWidth $gridStyle $gridColor;
+	height: $fontSize;
+	line-height: $fontSize;
+	font-size: $fontFallback;
+	font-size: $fontSize;
+}
+.sudoku-select-value span {
+	cursor: pointer;
+	/*display: block;*/
+	text-align: center;
+}

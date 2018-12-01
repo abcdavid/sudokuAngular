@@ -1,0 +1,11 @@
+<div class="square col{{square.col}} row{{square.row}}" [class.hint-last-grid]="hintLastGrid()" [class.hint-has-duplicate]="hintHasDuplicate()" [class.hint-single-possible-value]="hintSinglePossibleValue()" (click)="openModal(chooseValue)"><span *ngIf="square.getValue()!==0">{{square.getValue()}}</span><span *ngIf="square.getValue()===0"> </span>
+</div>
+<ng-template #chooseValue>
+	<div class="modal-header"><h4 class="modal-title pull-left">Choose value</h4><button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button></div>
+	<div class="modal-body sudoku-select-value">
+		<div *ngFor="let i of square.sudoku.baseArray" (click)="setValue(i)" class="square col{{(i-1)%square.sudoku.theRoot}} row{{(i-1-(i-1)%square.sudoku.theRoot)/square.sudoku.theRoot}}" [class.current-value]="i===square.getValue()" [class.hint-value-used]="hintUsedAlready(i)"><span>{{i}}</span></div>
+	</div>
+</ng-template>
+
