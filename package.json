@@ -23,7 +23,7 @@
     "@types/underscore": "^1.8.9",
     "bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
-    "jquery": "^1.9.1",
+    "jquery": "^3.3.1",
     "ngx-bootstrap": "^3.1.1",
     "ngx-popper": "^5.1.7",
     "popper.js": "^1.14.5",
